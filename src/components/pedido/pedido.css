@@ -1,0 +1,96 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #ffffff;
+  background-clip: border-box;
+  border: 1px solid rgba(98, 105, 118, 0.16);
+  border-radius: 4px; 
+}
+.card {
+  box-shadow: rgba(30, 41, 59, 0.04) 0 2px 4px 0;
+  border: 1px solid rgba(98, 105, 118, 0.16); 
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem; 
+}
+.card-body-scrollable {
+  overflow: auto; 
+}
+
+.divide-y > :not(template) ~ :not(template) {
+  border-top: 1px solid rgba(98, 105, 118, 0.16) !important; 
+}
+.divide-y > :not(template):not(:first-child) {
+  padding-top: 1rem !important; 
+}
+.divide-y > :not(template):not(:last-child) {
+  padding-bottom: 1rem !important; 
+}
+
+.row {
+  --tblr-gutter-x: 1rem;
+  --tblr-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--tblr-gutter-y));
+  margin-right: calc(-.5 * var(--tblr-gutter-x));
+  margin-left: calc(-.5 * var(--tblr-gutter-x)); 
+}  
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--tblr-gutter-x) * .5);
+  padding-left: calc(var(--tblr-gutter-x) * .5);
+  margin-top: var(--tblr-gutter-y); 
+}
+
+.col {
+  flex: 1 0 0%; 
+}
+.col-auto {
+  flex: 0 0 auto;
+  width: auto; 
+}
+
+.align-self-center {
+  align-self: center !important; 
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+.text-muted {
+  --tblr-text-opacity: 1;
+  color: #626976 !important; 
+}
+
+.avatar {
+  --tblr-avatar-size: 2.5rem;
+  --tblr-avatar-bg: #e2e8f0;
+  position: relative;
+  width: var(--tblr-avatar-size);
+  height: var(--tblr-avatar-size);
+  font-size: calc(var(--tblr-avatar-size) / 2.6666667);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #626976;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: var(--tblr-avatar-bg) no-repeat center/cover;
+  border-radius: 4px; 
+}
