@@ -1,31 +1,19 @@
-import { useEffect, useState } from 'react'
-import './pedido.css'
+// import { useEffect, useState } from 'react'
+// import './pedido.css'
 
 const Pedido = ({ pedido }) => {
 
   return (
-    <div className="card">
-      <div className="card-body card-body-scrollable">
-        <div className="divide-y">
-          <div>
-            <div className="row">
-              <div className="col-auto">
-                <div className="col">
-                  <div className="col-auto align-self-center">
-                    <span className="avatar">{pedido[5]}</span>
-                  </div>
-                  <div className="text-trucate">En un lugar de la Mancha...</div>
-                  <div className="text-muted">Ayer</div>
-                </div>
-                <div className="col-auto align-self-center">
-                  <div className="badge bg-success me-1"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <tr>
+      <td>
+        <input type="checkBox" className="form-check-input m-0 align-middle" aria-label="Select pedido" />
+      </td>
+      <td>{pedido[5]}</td>
+      <td>{pedido[6]}</td>
+      <td>{pedido[7]}</td>
+      <td>{pedido[3]}</td>
+      <td></td>
+    </tr>
   )
 }
 

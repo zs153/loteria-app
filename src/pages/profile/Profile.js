@@ -1,4 +1,4 @@
-import './profile.css'
+// import './profile.css'
 import Topbar from '../../components/topbar/Topbar'
 
 const Profile = () => {

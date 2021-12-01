@@ -1,0 +1,1 @@
+export const PEDIDOS_POR_PAGINA = 12

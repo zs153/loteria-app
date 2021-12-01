@@ -1,4 +1,4 @@
-import './pedido.css'
+// import './pedido.css'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 

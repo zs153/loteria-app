@@ -1,10 +1,15 @@
+import './home.css'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
-import Topbar from '../../components/topbar/Topbar';
-import Pedido from '../../components/pedido/Pedido';
+import { Link } from 'react-router-dom'
+import Topbar from '../../components/topbar/Topbar'
+import Pedidos from '../../components/pedido/pedidos'
+import Pagination from '../../components/pedido/Pagination'
+import { PEDIDOS_POR_PAGINA } from '../../utils/constantes'
 
 const Home = () => {
   const [pedidos, setPedidos] = useState([])
+  const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(0)
 
   useEffect(() => {
     async function getPedidos() {
@@ -13,7 +18,7 @@ const Home = () => {
         const data = await result.json()
 
         setPedidos(data.dat)
-
+        setTotalPages(Math.ceil(data.dat.length / PEDIDOS_POR_PAGINA))
       } catch (err) {
         console.log(err)
       }
@@ -22,51 +27,25 @@ const Home = () => {
     getPedidos()
   }, [])
 
+  const handleClick = num => {
+    setPage(num)
+  }
+
   return (
     <>
-      <Topbar />
-      {pedidos.map((pedido, index) => (
-        <Pedido key={pedido[0]} pedido={pedido} />
-      ))}
-
-      {/* <div className="page-wrapper">
+      <div className="page-wrapper">
         <div className="page-body">
           <div className="container-xl">
             <div className="row">
               <div className="col-12">
-                <div className="card">
-                  <div className="table-responsive">
-                    <table className="table table-vcenter card-table table-striped">
-                      <thead>
-                        <tr>
-                          <th>userID</th>
-                          <th>Nombre</th>
-                          <th>Correo</th>
-                          <th>Décimos</th>
-                          <th>Cambio</th>
-                          <th className="w-1"></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {pedidos.map((item, index) => (
-                          <tr key={index}>
-                            <td>{item[5]}</td>
-                            <td>{item[6]}</td>
-                            <td>{item[7]}</td>
-                            <td>{item[3]}</td>
-                            <td>{<Link to="#">Editar</Link>}</td>
-                            <td></td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                <Topbar />
+                <Pedidos pedidos={pedidos} page={page} />
+                <Pagination totalPages={totalPages} handleClick={handleClick} />
               </div>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <footer className="footer footer-transparent d-print-none">
         <div className="container">
