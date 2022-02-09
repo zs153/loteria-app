@@ -42,10 +42,6 @@ const pedidos = ({ pedidos, page }) => {
         </table>
       </div>
     </div>
-
-
-
-
   )
 }
 
