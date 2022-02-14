@@ -1,13 +1,14 @@
 import "./login.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
   const [user, setUser] = useState(null);
   const [userid, setUserid] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ const Login = () => {
       });
 
       setUser(res.data);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

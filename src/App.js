@@ -1,22 +1,28 @@
 // import './App.css';
-import Login from "./pages/login/Login";
-import Home from "./pages/home/Home";
+import Pedidos from './pages/pedido/Pedidos'
+import Registro from './pages/registro/Registro'
+import Login from './pages/login/Login'
+import Home from './pages/home/Home'
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-} from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "./context/AuthContext";
+} from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from './context/AuthContext'
 
 function App() {
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext)
 
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/pedidos' element={<Pedidos />} />
+        <Route exact path='/registro' element={<Registro />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </Router>
 
@@ -32,7 +38,7 @@ function App() {
     //     />
     //   </Routes>
     // </Router>
-  );
+  )
 }
 
-export default App;
+export default App

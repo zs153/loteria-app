@@ -1,9 +1,9 @@
+import "./registro.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import "./register.css";
 
-const Register = () => {
+const Registro = () => {
   const navigate = useNavigate();
 
   const initValues = { userid: "", nombre: "", email: "" };
@@ -135,4 +135,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Registro;

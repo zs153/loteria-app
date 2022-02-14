@@ -1,0 +1,20 @@
+.footer {
+  border-top: 1px solid #e6e7e9;
+  background-color: #fff;
+  padding: 2rem 0;
+  color: #626976;
+  margin-top: auto;
+}
+footer-transparent {
+  background-color: transparent;
+  border-top: 0;
+}
+.text-center {
+  text-align: center !important;
+}
+.align-items-center {
+  align-items: center !important;
+}
+.m-l05 {
+  margin-left: 0.5rem;
+}
